@@ -1,0 +1,70 @@
+h1, p {
+  background-color: #DDE0E3;
+  /* Light gray */
+}
+
+h1 {
+  padding: 50px;
+  border: 1px solid red;
+  border-bottom: 5px solid blue;
+}
+
+p {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+/* or for shorthand:
+  padding: TOP RiGHT BOTTOM lEFT
+  padding: 20px 10px 20px 10px;*/
+em, strong {
+  background-color: #B2D6FF;
+  display: inline;
+  /* or use the default inline of display: inline; or block; */
+}
+
+strong {
+  padding: 20px;
+}
+
+em {
+  margin: 20px;
+}
+
+/* Content – The text, image, or other media content in the element.
+Padding – The space between the box’s content and its border.
+Border – The line between the box’s padding and margin.
+Margin – The space between the box and surrounding boxes. */
+div {
+  color: #FFF;
+  background-color: #5995DA;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #5D6063;
+  border-radius: 5px;
+  width: 200px;
+  box-sizing: border-box;  /* Add this */
+  margin: 20px auto; /* Vertical  Horizontal alignment */
+}
+
+body {
+  text-align: center;
+}
+
+/* universal CSS selector */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Everything is a box.
+Boxes can be inline or block-level.
+Boxes have content, padding, borders, and margins.
+They also have seemingly arbitrary rules about how they interact.
+Mastering the CSS box model means you can lay out most web pages. */
