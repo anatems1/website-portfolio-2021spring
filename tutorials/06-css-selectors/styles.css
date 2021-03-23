@@ -14,13 +14,11 @@
   text-decoration: none;      /* Add this */
 
   color: #FFF;
-  background-color: #5995DA;
-  /* Blue */
+  background-color: #5995DA;  /* Blue */
   font-weight: bold;
   padding: 20px;
   text-align: center;
-  border: 2px solid #5D6063;
-  /* Dark gray */
+  border: 2px solid #5D6063;  /* Dark gray */
   border-radius: 5px;
   width: 200px;
   margin: 20px auto;
@@ -36,7 +34,7 @@
 .button:visited:active {
   color: #FFF;
   background-color: #5995DA;  /* Blue */
-
+}
 /*gives individual formating after the .button class*/
 .call-to-action:link,
 .call-to-action:visited {
@@ -54,7 +52,9 @@
   background-color: #EEB75A;     /* Yellow */
 }
 
-
+#prompt1 {
+  color: red; /* Dark grey */
+}
 
 /*---------------------------------------------------------------*/
 
