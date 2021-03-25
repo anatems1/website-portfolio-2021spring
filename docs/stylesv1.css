@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/*heading styles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+.header-container {
+  height: 20%;
+  color: red;
+  background-color: white;
+  border: 1px solid black;
+
+}
+
+.header {
+  position: relative;
+}
+
+.header .headertxt {
+  position: absolute;
+  margin: 0 auto;
+  z-index: 999;
+  left: 0;
+  right: 0;
+  top: 40%; /* Adjust this value to move the positioned div up and down */
+  text-align: center;
+  width: 100%;
+
+}
+
+
+/* menu styles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+.menu-container {
+  color: #fff;
+  background-color: white;
+}
+
+.menu {
+  height: 15%;
+  border: 1px solid black;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.link {
+  float: left;
+  height: 20px;
+  text-align: center;
+  margin: 5px;
+  color: #5995DA;
+  text-decoration: underline;
+
+}
+
+/* main page content %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+.page {
+  margin: 0 auto;
+  overflow: hidden;
+  height: 1000px;
+}
+
+.sidebar {
+  float: left;
+  width: 15%;
+  height: 100%;
+  background-color: #F09A9D;
+  border: 1px solid black;
+}
+
+.content {
+  float: left;
+  width: 85%;
+  height: 100%;
+  background-color: #F5CF8E;
+  padding: 20px;
+  border: 1px solid black;
+}

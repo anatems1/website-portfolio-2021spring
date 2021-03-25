@@ -1,37 +1,61 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+
+      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      document.getElementById("datetime").innerHTML = time;
+    }
+  </script>
+
   <head>
     <meta charset="utf-8">
     <title>Structural Engineering</title>
-    <link rel='stylesheet' href='styles.css' />
+    <link rel='stylesheet' href='_grid.css' />
   </head>
+
   <body>
     <!-- header %%%%%%%%%%%%%%%%%%%%%%%%%edit%-->
-    <div class='header-container'>
+    <div class='container'>
       <div class='header'>
-        <h1>Strucutral Engineering</h1>
-      </div>
-    </div>
-
-    <!-- menu %%%%%%%%%%%%%%%%%%%%%%%%%%-->
-    <div class='menu-container'>
-      <div class='menu'>
-        <div class='links'>
-          <div class='link'>Types of Bridges</div>
-          <div class='link'>Fundamentals</div>
-          <div class='link'>Calculations</div>
-          <div class='link'>About Me</div>
+        <img src="images/header_bgr.png" width="100%" />
+        <div class="headertxt">
+          <h1>Strucutral Engineering</h1>
         </div>
       </div>
-    </div>
 
-    <!-- main body %%%%%%%%%%%%%%%%%%%%%%%%%%-->
-    <div class='main-container'>
-      <div class='page'>
-        <div class="sidebar"></div>
-        <div class="content"></div>
+      <!-- menu %%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+      <div class='menu'>
+        <button class="openbtn" onclick="openNav()">&#9776; Toggle Menu</button>
+        <div class="watch">
+          <p id="datetime"></p>
+        </div>
+      </div>
+
+
+      <!-- main body %%%%%%%%%%%%%%%%%%%%%%%%%%-->
+      <div class="resource_one">Resources</div>
+      <div class="submenu">Submenu</div>
+      <div class="content">Content</div>
+      <div class="footer">Footer</div>
+
+      <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#">Home</a>
+        <a href="#">Types of Bridges</a>
+        <a href="#">Fundamentals</a>
+        <a href="#">About me</a>
+        <a href="#">Assets</a>
       </div>
     </div>
-
   </body>
+
 </html>
