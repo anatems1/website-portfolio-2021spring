@@ -9,6 +9,20 @@
   border: 1px solid black;
 }
 
+h1, h2, .menu, .openbtn {
+  font-family: Fantasy;
+}
+
+h2 {
+  font-size: 18px;
+  text-align: center;
+  text-decoration: underline;
+}
+canvas#truss {
+  background: white;
+}
+
+/* header %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .header{
   grid-row: 1/1;
   grid-column: 1/5;
@@ -27,6 +41,7 @@
   color: red;
 }
 
+/* menu items %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .menu{
   grid-column: 1/5;
   grid-row:: 2/2;
@@ -34,8 +49,28 @@
   display: flex;
   background-color: black;
   color: #fff;
+  justify-content: space-between;
 }
 
+.openbtn, #clock {
+  font-size: 12px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 5px 5px;
+  border: none;
+  flex: initial;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+.menu #blankspace {
+  flex: 1;
+}
+
+/* main contents %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .submenu {
   grid-row: 3/5;
   grid-column: 1/1;
@@ -91,20 +126,6 @@
   font-size: 36px;
   margin-left: 50px;
 }
-
-.openbtn {
-  font-size: 12px;
-  cursor: pointer;
-  background-color: #111;
-  color: white;
-  padding: 5px 5px;
-  border: none;
-}
-
-.openbtn:hover {
-  background-color: #444;
-}
-
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {

@@ -9,10 +9,64 @@
     function closeNav() {
       document.getElementById("mySidebar").style.width = "0";
       document.getElementById("main").style.marginLeft = "0";
-
-      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-      document.getElementById("datetime").innerHTML = time;
     }
+
+    function init() {
+      drawtruss();
+    }
+
+    function resizifier(){
+      drawtruss();
+    }
+
+    function drawtruss(){
+      var canvas = document.getElementById("truss");
+      var ctx = canvas.getContext("2d");
+      ht1 = window.innerHeight * 0.15;
+      wd1 = window.innerWidth;
+      canvas.width = wd1;
+      canvas.height = ht1;
+      ctx.clearRect(0,0,wd1,ht1);
+      itrns = Math.round(wd1/50,0);
+      if((itrns % 2) == 0)
+      {
+        itrns = itrns
+      }
+      else {
+        itrns = itrns -1;
+      }
+      top1 = ht1*0.25;
+      bot1 = ht1 - top1;
+      space1 = wd1 / itrns;
+
+      ctx.moveTo(space1*2, top1);
+      ctx.lineTo(space1*(itrns - 2), top1);
+      ctx.stroke();
+
+      ctx.moveTo(space1, bot1);
+      ctx.lineTo(wd1-space1, bot1);
+      ctx.stroke();
+
+      var j;
+      for (j =1; j <= itrns-2; j+= 2) {
+        ctx.moveTo(space1*j, bot1);
+        ctx.lineTo(space1*(j+1), top1);
+        ctx.stroke();
+
+        ctx.moveTo(space1*(j+1), top1);
+        ctx.lineTo(space1*(j+2), bot1);
+        ctx.stroke();
+      }
+    }
+
+    function time() {
+      var d = new Date();
+      var s = d.getSeconds();
+      var m = d.getMinutes();
+      var h = d.getHours();
+      document.getElementById("clock").textContent ="🕐 Current Time: " + ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
+    }
+    setInterval(time,1000);
   </script>
 
   <head>
@@ -21,13 +75,13 @@
     <link rel='stylesheet' href='_grid.css' />
   </head>
 
-  <body>
+  <body onload="init()" onresize="resizifier()">
     <!-- header %%%%%%%%%%%%%%%%%%%%%%%%%edit%-->
     <div class='container'>
       <div class='header'>
-        <img src="images/header_bgr.png" width="100%" />
+        <canvas id="truss"></canvas>
         <div class="headertxt">
-          <h1>Strucutral Engineering</h1>
+          <h1>Structural Engineering</h1>
         </div>
       </div>
 
@@ -35,17 +89,16 @@
 
       <div class='menu'>
         <button class="openbtn" onclick="openNav()">&#9776; Toggle Menu</button>
-        <div class="watch">
-          <p id="datetime"></p>
-        </div>
+        <div class='menu' id="blankspace"></div>
+        <div id="clock"></div>
       </div>
 
 
       <!-- main body %%%%%%%%%%%%%%%%%%%%%%%%%%-->
-      <div class="resource_one">Resources</div>
-      <div class="submenu">Submenu</div>
-      <div class="content">Content</div>
-      <div class="footer">Footer</div>
+      <div class="resource_one"><h2>Resources</h2></div>
+      <div class="submenu"><h2>Submenu</h2></div>
+      <div class="content"><h2>Home</h2></div>
+      <div class="footer"><h2>Footer</h2></div>
 
       <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
@@ -56,6 +109,7 @@
         <a href="#">Assets</a>
       </div>
     </div>
+
   </body>
 
 </html>
