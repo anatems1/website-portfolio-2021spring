@@ -12,21 +12,22 @@
     }
 
     function init() {
-      drawtruss();
+      trusscol = 'black';
+      drawtruss(trusscol);
     }
 
     function resizifier(){
-      drawtruss();
+      drawtruss(trusscol);
     }
 
-    function drawtruss(){
+    function drawtruss(trusscol){
       var canvas = document.getElementById("truss");
       var ctx = canvas.getContext("2d");
       ht1 = window.innerHeight * 0.15;
       wd1 = window.innerWidth;
       canvas.width = wd1;
       canvas.height = ht1;
-      ctx.clearRect(0,0,wd1,ht1);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       itrns = Math.round(wd1/50,0);
       if((itrns % 2) == 0)
       {
@@ -39,6 +40,8 @@
       bot1 = ht1 - top1;
       space1 = wd1 / itrns;
 
+
+      ctx.strokeStyle = trusscol;
       ctx.moveTo(space1*2, top1);
       ctx.lineTo(space1*(itrns - 2), top1);
       ctx.stroke();
@@ -67,6 +70,28 @@
       document.getElementById("clock").textContent ="🕐 Current Time: " + ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
     }
     setInterval(time,1000);
+
+    function darktheme() {
+      var darkcol = "#616366"
+      var darkcol2 = "#3b3737"
+      var textdarkcol = "#9fa9bd"
+      var fontdarkcol = "black"
+      t = ['content','resource_one','pageimg', 'submenu']
+      for (var j = 0; j<t.length; j++){
+        var obj = document.getElementsByClassName(t[j])
+        for (var i = 0; i < obj.length; i++) {
+          obj[i].style.backgroundColor = darkcol;
+          obj[i].style.borderColor= textdarkcol;
+          obj[i].style.color = fontdarkcol;
+        }
+      }
+      document.body.style.backgroundColor = darkcol2;
+      document.getElementsByClassName("container").backgroundColor = darkcol2;
+      document.getElementById("truss").style.backgroundColor= darkcol2;
+      document.getElementById("head1").style.color = "white"
+      trusscol = 'red';
+      drawtruss(trusscol);
+    }
   </script>
 
   <head>
@@ -81,7 +106,7 @@
       <div class='header'>
         <canvas id="truss"></canvas>
         <div class="headertxt">
-          <h1>Structural Engineering</h1>
+          <h1 id="head1">Structural Engineering</h1>
         </div>
       </div>
 
@@ -91,6 +116,8 @@
         <button class="openbtn" onclick="openNav()">&#9776; Toggle Menu</button>
         <div class='menu' id="blankspace"></div>
         <div id="clock"></div>
+        <button class="theme" onclick="darktheme()">Dark</button>
+        <button class="theme" onclick="darktheme()">Light</button>
       </div>
 
 
@@ -98,16 +125,19 @@
       <div class="resource_one"><h2>Resources</h2></div>
       <div class="submenu">
         <h2>Submenu</h2>
-        <div class="smenuitem">
+        <div class="smenuitem" id="me">
           <img src="images/personal.png" width="100px" height="100px" />
         </div>
         <div class="smenuitem"></div>
         <div class="smenuitem"></div>
         <div class="smenuitem"></div>
+        <div class="smenuitem"></div>
       </div>
-      <div class="pageimg"></div>
+      <div class="pageimg">
+        <img id="pgh" src="images/pgh.png"/>
+      </div>
       <div class="content"><h2>Home</h2></div>
-      <div class="footer"><h2>Footer</h2></div>
+      <div class="footer" id="col1"><h2>Footer</h2></div>
 
       <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
