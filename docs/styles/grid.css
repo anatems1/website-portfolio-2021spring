@@ -13,8 +13,8 @@
 .menu, .content, .footer, .pageimg {
   border-radius: 0px;
 }
-h1, h2, .menu, .openbtn {
-  font-family: Fantasy;
+h1, h2, .menu, .openbtn, .theme {
+  font-family: Impact;
 }
 
 h2 {
