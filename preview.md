@@ -1,0 +1,8 @@
+<p align="center">
+<img src="../screenshots/screenshot_20210329_1159PM.png" width="700px"/>
+</p>
+So far, my website contains many different elements. My initial HTML file includes a header, a menu, an image location, a resource pain, a side navigation bar, a submenu, a main content box, and a footer. They are all aligned in a grid layout that is completely dictated by CSS. In the header, the truss behind the title "Structural Engineering" is drawn on a canvas that updates as the webpage is resized. In the menu there is a current time and a "Toggle Menu" button. When the user clicks on this button, a navigation sidebar will sweep onto the page that will allow the user to navigate to other pages. The "home" section will be used to display more information in later versions of my webpage. I still have yet to code a new page for "types of bridges", "fundamentals", and "About me". In the "types of bridges" page I will be elaborating on the various types of bridges that are used today. The fundamentals page will be used to describe some of the basic equations that are used in civil engineering to determine these forces inside of these large structures (for those who don't know). The about me page seems pretty self-explanatory, it is all about me.
+I am currently working on a dark/light mode feature that will dynamically change the theme of the page on the click of a button. This is still my first time using CSS, but I have some background in JS and html. I haven't used  the two in quite a while so I still have a lot of learning to do, but hopefully I will be able to implement everything that I want in my website by the time we have to submit the project. I have been having a lot of fun so far and I can't wait to keep coding!
+<p>
+So fa
+</p>
