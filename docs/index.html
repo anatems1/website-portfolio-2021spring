@@ -24,7 +24,7 @@
       var canvas = document.getElementById("truss");
       var ctx = canvas.getContext("2d");
       ht1 = window.innerHeight * 0.15;
-      wd1 = window.innerWidth;
+      wd1 = window.innerWidth -33;
       canvas.width = wd1;
       canvas.height = ht1;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -72,23 +72,23 @@
     setInterval(time,1000);
 
     function darktheme() {
-      var darkcol = "#616366"
-      var darkcol2 = "#3b3737"
-      var textdarkcol = "#9fa9bd"
+      var darkcol = "#616366" /*dark-light grey*/
+      var darkcol2 = "#3b3737" /*darker grey*/
+      var borddarkcol = "#9fa9bd" /*light grey border color*/
       var fontdarkcol = "black"
       t = ['content','resource_one','pageimg', 'submenu']
       for (var j = 0; j<t.length; j++){
         var obj = document.getElementsByClassName(t[j])
         for (var i = 0; i < obj.length; i++) {
           obj[i].style.backgroundColor = darkcol;
-          obj[i].style.borderColor= textdarkcol;
+          obj[i].style.borderColor= borddarkcol;
           obj[i].style.color = fontdarkcol;
         }
       }
       document.body.style.backgroundColor = darkcol2;
       document.getElementsByClassName("container").backgroundColor = darkcol2;
       document.getElementById("truss").style.backgroundColor= darkcol2;
-      document.getElementById("head1").style.color = "white"
+      document.getElementById("head1").style.color = "white";
       trusscol = 'red';
       drawtruss(trusscol);
     }
@@ -122,7 +122,31 @@
 
 
       <!-- main body %%%%%%%%%%%%%%%%%%%%%%%%%%-->
-      <div class="resource_one"><h2>Resources</h2></div>
+      <div class="resource_one"><h2>Resources</h2>
+        <div class="rmenuitem">
+          <a href="#" >
+            <img src="images/pitt_swanson.png" id="rsc"/>
+          </a>
+        </div>
+        <div class="rmenuitem">
+          <a href="#" >
+            <img src="images/pitt.png" id="rsc"/>
+          </a>
+        </div>
+        <div class="rmenuitem">
+          <a href="#" >
+            <img src="images/ASCE.png" id="rsc"/>
+          </a>
+        </div>
+        <div class="rmenuitem">
+          <a href="#"><p id="rsclink">AASHTO</p></a>
+        </div>
+        <div class="rmenuitem">
+          <a href="#" >
+            <img src="images/ICC.png" id="rsc"/>
+          </a>
+        </div>
+      </div>
       <div class="submenu">
         <h2>Submenu</h2>
         <div class="smenuitem" id="me">
