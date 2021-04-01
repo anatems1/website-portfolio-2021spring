@@ -11,9 +11,14 @@
       document.getElementById("main").style.marginLeft = "0";
     }
 
-    function init() {
-      trusscol = 'black';
-      drawtruss(trusscol);
+    function init(theme) {
+      var theme = sessionStorage.getItem("theme");
+      if (theme == "dark") {
+        darktheme();
+      }
+      else {
+        lighttheme();
+      }
     }
 
     function resizifier(){
@@ -72,25 +77,62 @@
     setInterval(time,1000);
 
     function darktheme() {
-      var darkcol = "#616366" /*dark-light grey*/
-      var darkcol2 = "#3b3737" /*darker grey*/
-      var borddarkcol = "#9fa9bd" /*light grey border color*/
-      var fontdarkcol = "black"
+      var themecol = "#616366" /*dark-light grey*/
+      var themecol2 = "#3b3737" /*darker grey*/
+      var bordcol = "#9fa9bd" /*light grey border color*/
+      var fontcol = "black"
       t = ['content','resource_one','pageimg', 'submenu']
       for (var j = 0; j<t.length; j++){
         var obj = document.getElementsByClassName(t[j])
         for (var i = 0; i < obj.length; i++) {
-          obj[i].style.backgroundColor = darkcol;
-          obj[i].style.borderColor= borddarkcol;
-          obj[i].style.color = fontdarkcol;
+          obj[i].style.backgroundColor = themecol;
+          obj[i].style.borderColor= bordcol;
+          obj[i].style.color = fontcol;
         }
       }
-      document.body.style.backgroundColor = darkcol2;
-      document.getElementsByClassName("container").backgroundColor = darkcol2;
-      document.getElementById("truss").style.backgroundColor= darkcol2;
+      document.body.style.backgroundColor = themecol2;
+      document.getElementsByClassName("container").backgroundColor = themecol2;
+      document.getElementById("truss").style.backgroundColor= themecol2;
       document.getElementById("head1").style.color = "white";
       trusscol = 'red';
       drawtruss(trusscol);
+      var theme = "dark"
+      varpass(theme);
+    }
+    function lighttheme() {
+      var themecol = "white" /*dark-light grey*/
+      var themecol2 = "white" /*darker grey*/
+      var bordcol = "black" /*light grey border color*/
+      var fontcol = "black"
+      t = ['content','resource_one','pageimg', 'submenu']
+      for (var j = 0; j<t.length; j++){
+        var obj = document.getElementsByClassName(t[j])
+        for (var i = 0; i < obj.length; i++) {
+          obj[i].style.backgroundColor = themecol;
+          obj[i].style.borderColor= bordcol;
+          obj[i].style.color = fontcol;
+        }
+      }
+      document.body.style.backgroundColor = themecol2;
+      document.getElementsByClassName("container").backgroundColor = themecol2;
+      document.getElementById("truss").style.backgroundColor= themecol2;
+      document.getElementById("head1").style.color = "red";
+      trusscol = 'black';
+      drawtruss(trusscol);
+      var theme = "light"
+      varpass(theme);
+    }
+
+    function varpass(theme) {
+      sessionStorage.setItem("theme",theme);
+    }
+
+    function colorrand1() {
+      coltool = ["","",""];
+      for (var ij=0; ij<3; ij++) {
+        coltool[ij] = '#'+Math.floor(Math.random()*16777215).toString(16);
+      }
+      document.getElementById("test").textContent = coltool;
     }
   </script>
 
@@ -117,7 +159,8 @@
         <div class='menu' id="blankspace"></div>
         <div id="clock"></div>
         <button class="theme" onclick="darktheme()">Dark</button>
-        <button class="theme" onclick="darktheme()">Light</button>
+        <button class="theme" onclick="lighttheme()">Light</button>
+        <button class="theme" id="rand1" onclick="colorrand1()">Randomize Colors</button>
       </div>
 
 
@@ -160,13 +203,16 @@
       <div class="pageimg">
         <img id="pgh" src="images/pgh.png"/>
       </div>
-      <div class="content"><h2>Home</h2></div>
+      <div class="content">
+        <h2>Home</h2>
+        <p id="test"></p>
+      </div>
       <div class="footer" id="col1"><h2>Footer</h2></div>
 
       <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <a href="#">Home</a>
-        <a href="#">Types of Bridges</a>
+        <a href="bridge_types.html">Types of Bridges</a>
         <a href="#">Fundamentals</a>
         <a href="#">About me</a>
         <a href="#">Assets</a>
