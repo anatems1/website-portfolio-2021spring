@@ -11,20 +11,26 @@
       document.getElementById("main").style.marginLeft = "0";
     }
 
+    /*tells the page what to do on once openeed up or _ initialized*/
     function init(theme) {
       var theme = sessionStorage.getItem("theme");
+      var rand1 = sessionStorage.getItem("rand1");
+      var rand2 = sessionStorage.getItem("rand2");
+      var rand3 = sessionStorage.getItem("rand3");
       if (theme == "dark") {
-        darktheme();
+        darktheme(rand1,rand2,rand3);
       }
       else {
-        lighttheme();
+        lighttheme(rand1,rand2,rand3);
       }
     }
 
+    /*activates function for when the page is resized*/
     function resizifier(){
       drawtruss(trusscol);
     }
 
+    /*code for drawing the truss in the header and setting the scale */
     function drawtruss(trusscol){
       var canvas = document.getElementById("truss");
       var ctx = canvas.getContext("2d");
@@ -67,6 +73,7 @@
       }
     }
 
+    /*allows the "Current Time" clock to display the time realtime*/
     function time() {
       var d = new Date();
       var s = d.getSeconds();
@@ -74,9 +81,12 @@
       var h = d.getHours();
       document.getElementById("clock").textContent ="🕐 Current Time: " + ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
     }
+
+    /*sets interval for time update to 1 second */
     setInterval(time,1000);
 
-    function darktheme() {
+    /*changes colors of items for the dark theme*/
+    function darktheme(rand1, rand2, rand3) {
       var themecol = "#616366" /*dark-light grey*/
       var themecol2 = "#3b3737" /*darker grey*/
       var bordcol = "#9fa9bd" /*light grey border color*/
@@ -90,16 +100,30 @@
           obj[i].style.color = fontcol;
         }
       }
+
       document.body.style.backgroundColor = themecol2;
       document.getElementsByClassName("container").backgroundColor = themecol2;
       document.getElementById("truss").style.backgroundColor= themecol2;
-      document.getElementById("head1").style.color = "white";
-      trusscol = 'red';
+      document.getElementById("head1").style.color = rand3;
+
+      k = ['smenuitem', 'footer', 'theme']
+      for (var j = 0; j<t.length; j++){
+        var obj = document.getElementsByClassName(k[j])
+        for (var i = 0; i < obj.length; i++) {
+          obj[i].style.backgroundColor = rand2;
+          obj[i].style.borderColor= bordcol;
+        }
+      }
+      document.getElementById("rst").style.backgroundColor = rand1;
+
+      trusscol = rand1;
       drawtruss(trusscol);
       var theme = "dark"
       varpass(theme);
     }
-    function lighttheme() {
+
+    /*changes colors of items for the light theme*/
+    function lighttheme(rand1, rand2, rand3) {
       var themecol = "white" /*dark-light grey*/
       var themecol2 = "white" /*darker grey*/
       var bordcol = "black" /*light grey border color*/
@@ -116,23 +140,62 @@
       document.body.style.backgroundColor = themecol2;
       document.getElementsByClassName("container").backgroundColor = themecol2;
       document.getElementById("truss").style.backgroundColor= themecol2;
-      document.getElementById("head1").style.color = "red";
-      trusscol = 'black';
+      document.getElementById("head1").style.color = rand1;
+
+
+      k = ['smenuitem', 'footer', 'theme']
+      for (var j = 0; j<t.length; j++){
+        var obj = document.getElementsByClassName(k[j])
+        for (var i = 0; i < obj.length; i++) {
+          obj[i].style.backgroundColor = rand2;
+          obj[i].style.borderColor= bordcol;
+        }
+      }
+      document.getElementById("rst").style.backgroundColor = rand1;
+
+      trusscol = rand3;
       drawtruss(trusscol);
       var theme = "light"
       varpass(theme);
     }
 
+    /*sets the current status of theme up for whenever another page is opened*/
     function varpass(theme) {
       sessionStorage.setItem("theme",theme);
     }
 
-    function colorrand1() {
+    /*assigns three random colors for the theme of the page*/
+    function colorrand1(theme) {
       coltool = ["","",""];
       for (var ij=0; ij<3; ij++) {
         coltool[ij] = '#'+Math.floor(Math.random()*16777215).toString(16);
       }
-      document.getElementById("test").textContent = coltool;
+
+      var rand1 = coltool[0];
+      var rand2 = coltool[1];
+      var rand3 = coltool[2];
+      sessionStorage.setItem("rand1",rand1);
+      sessionStorage.setItem("rand2",rand2);
+      sessionStorage.setItem("rand3",rand3);
+      var theme = sessionStorage.getItem("theme");
+
+      if (theme == "dark") {
+        darktheme(rand1, rand2, rand3);
+      }
+      else {
+        lighttheme(rand1, rand2, rand3);
+      }
+    }
+
+    /*resets colors to original theme */
+    function colreset() {
+      var rand1 = "red";
+      var rand2 = "#5995DA";
+      var rand3 = "black";
+      sessionStorage.setItem("rand1",rand1);
+      sessionStorage.setItem("rand2",rand2);
+      sessionStorage.setItem("rand3",rand3);
+      lighttheme(rand1,rand2,rand3);
     }
   </script>
 
@@ -160,10 +223,12 @@
         <div id="clock"></div>
         <button class="theme" onclick="darktheme()">Dark</button>
         <button class="theme" onclick="lighttheme()">Light</button>
-        <button class="theme" id="rand1" onclick="colorrand1()">Randomize Colors</button>
+        <button class="theme" onclick="colorrand1()">Randomize Colors</button>
+        <button class="theme" id="rst" onclick="colreset()">Reset</button>
       </div>
 
 
+      <div class="body_container">
       <!-- main body %%%%%%%%%%%%%%%%%%%%%%%%%%-->
       <div class="resource_one"><h2>Resources</h2>
         <div class="rmenuitem">
@@ -182,7 +247,9 @@
           </a>
         </div>
         <div class="rmenuitem">
-          <a href="#"><p id="rsclink">AASHTO</p></a>
+          <a href="#">
+            <img src="images/AASHTO.png" id="rsc"/>
+          </a>
         </div>
         <div class="rmenuitem">
           <a href="#" >
@@ -216,6 +283,7 @@
         <a href="#">Fundamentals</a>
         <a href="#">About me</a>
         <a href="#">Assets</a>
+      </div>
       </div>
     </div>
 

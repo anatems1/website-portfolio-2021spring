@@ -3,8 +3,20 @@
   grid-template-columns: 150px 2fr 2fr 200px;
   grid-template-rows: repeat(4, minmax(20px, max-content));
   grid-gap: 10px;
+  align-content: center;
+  justify-content: center;
 }
 
+.body_container {
+  grid-column: 1/5;
+  grid-row:: 3/3;
+  display: grid;
+  grid-template-columns: 1fr 150px 2fr 2fr 200px 1fr;
+  grid-template-rows: repeat(4, minmax(20px, max-content));
+  grid-gap: 10px;
+  align-content: center;
+  justify-content: center;
+}
 .menu, .submenu, .content, .footer, .resource_one, .pageimg {
   border: 3px solid black;
   border-radius: 25px;
@@ -60,7 +72,7 @@ a {
   justify-content: space-between;
 }
 
-.openbtn, #clock, .theme {
+.openbtn, #clock {
   font-size: 12px;
   cursor: pointer;
   background-color: black;
@@ -70,12 +82,21 @@ a {
   flex: initial;
 }
 
-#rand1 {
-  color: purple;
-  background-color: white;
+.theme {
+  font-size: 12px;
+  cursor: pointer;
+  background-color: #5995DA;
+  color: Black;
+  padding: 5px 5px;
+  border: 1px solid white;
+  flex: initial;
 }
 
-.openbtn:hover, .theme:hover {
+#rst {
+  background-color: red;
+}
+
+.openbtn:hover, .theme:hover, #rst:hover {
   background-color: #444;
 }
 
@@ -85,8 +106,8 @@ a {
 
 /* main contents %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .submenu {
-  grid-row: 5/7;
-  grid-column: 1/1;
+  grid-row: 2/4;
+  grid-column: 2/2;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -103,13 +124,13 @@ a {
 
 #me {
   background-color: #5995DA;
-  border: 3px solid black;
+  border: 3px solid #5995DA;
   border-radius: 100px;
 }
 
 .pageimg{
-  grid-row: 3/5;
-  grid-column: 1/4;
+  grid-row: 1/1;
+  grid-column: 2/5;
   height: 200px;
 
 }
@@ -120,13 +141,13 @@ a {
   object-fit: cover;
 }
 .content{
-  grid-row: 5/7;
-  grid-column: 2/4;
+  grid-row: 2/4;
+  grid-column: 3/5;
 }
 
 .resource_one {
-  grid-row: 3/7;
-  grid-column: 4/4;
+  grid-row: 1/4;
+  grid-column: 5/5;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -149,13 +170,9 @@ a {
   object-fit: scale-down;
 }
 
-#rsclink {
-  font-size: 24px;
-}
-
 .footer {
-  grid-row: 7/7;
-  grid-column: 1/5;
+  grid-row: 4/5;
+  grid-column: 2/6;
   background-color: #5995DA;
 }
 
