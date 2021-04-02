@@ -1,24 +1,33 @@
-.container {
-  display: grid;
-  grid-template-columns: 150px 2fr 2fr 200px;
-  grid-template-rows: repeat(4, minmax(20px, max-content));
-  grid-gap: 10px;
+body {
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   align-content: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-.body_container {
-  grid-column: 1/5;
-  grid-row:: 3/3;
+.menu_container {
   display: grid;
-  grid-template-columns: 1fr 150px 2fr 2fr 200px 1fr;
+  grid-template-columns: 150px 2fr 2fr 200px;
+  grid-template-rows: repeat(1, minmax(20px, max-content));
+  z-index: 1;
+}
+
+
+.body_container {
+  max-height: 81vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 2fr 1fr 1fr;
   grid-template-rows: repeat(4, minmax(20px, max-content));
   grid-gap: 10px;
-  align-content: center;
-  justify-content: center;
+  z-index: 0;
+  overflow-y: scroll;
+
 }
 .menu, .submenu, .content, .footer, .resource_one, .pageimg {
-  border: 3px solid black;
+  border: 2px solid black;
   border-radius: 25px;
 }
 
@@ -35,9 +44,7 @@ h2 {
   text-align: center;
   text-decoration: underline;
 }
-canvas#truss {
-  background: white;
-}
+
 a {
   text-decoration: none;
 }
@@ -55,17 +62,18 @@ a {
   z-index: 999;
   left: 0;
   right: 0;
-  top: 20%; /* Adjust this value to move the positioned div up and down */
+  top: 25%; /* Adjust this value to move the positioned div up and down */
   text-align: center;
   width: 100%;
   color: red;
 }
-
+canvas#truss {
+  background: white;
+}
 /* menu items %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .menu{
   grid-column: 1/5;
   grid-row:: 2/2;
-  overflow: hidden;
   display: flex;
   background-color: black;
   color: #fff;
@@ -111,28 +119,23 @@ a {
   align-items: center;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 
 }
 .smenuitem {
-  height: 100px;
-  width: 100px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: #5995DA;
-}
-
-#me {
   background-color: #5995DA;
   border: 3px solid #5995DA;
   border-radius: 100px;
+  margin: 0px 10px 0px 10px;
+
 }
 
 .pageimg{
   grid-row: 1/1;
   grid-column: 2/5;
-  height: 200px;
-
+  margin-top: 10px;
+  height:200px;
 }
 
 #pgh {
@@ -140,26 +143,34 @@ a {
   height: 100%;
   object-fit: cover;
 }
+
 .content{
+  height:500px;
+  overflow-y: scroll;
   grid-row: 2/4;
   grid-column: 3/5;
+}
+
+#embcontent {
+  width: 100%;
+  height: 100%;
 }
 
 .resource_one {
   grid-row: 1/4;
   grid-column: 5/5;
+  margin-top: 10px;
   align-items: center;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   object-position: center;
+  justify-content: space-between;
 }
 
 .rmenuitem {
   height: 15%;
   width: 75%;
-  margin-top: 10px;
-  margin-bottom: 10px;
   background-color: transparent;
   text-align: center;
 }
@@ -171,8 +182,10 @@ a {
 }
 
 .footer {
+  text-align:left;
+  object-position: left;
   grid-row: 4/5;
-  grid-column: 2/6;
+  grid-column: 1/7;
   background-color: #5995DA;
 }
 

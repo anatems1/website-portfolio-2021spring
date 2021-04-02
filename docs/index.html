@@ -18,57 +18,54 @@
       var rand2 = sessionStorage.getItem("rand2");
       var rand3 = sessionStorage.getItem("rand3");
       if (theme == "dark") {
-        darktheme(rand1,rand2,rand3);
-      }
-      else {
-        lighttheme(rand1,rand2,rand3);
+        darktheme(rand1, rand2, rand3);
+      } else {
+        lighttheme(rand1, rand2, rand3);
       }
     }
 
     /*activates function for when the page is resized*/
-    function resizifier(){
+    function resizifier() {
       drawtruss(trusscol);
     }
 
     /*code for drawing the truss in the header and setting the scale */
-    function drawtruss(trusscol){
+    function drawtruss(trusscol) {
       var canvas = document.getElementById("truss");
       var ctx = canvas.getContext("2d");
       ht1 = window.innerHeight * 0.15;
-      wd1 = window.innerWidth -33;
+      wd1 = window.innerWidth - 33;
       canvas.width = wd1;
       canvas.height = ht1;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      itrns = Math.round(wd1/50,0);
-      if((itrns % 2) == 0)
-      {
+      itrns = Math.round(wd1 / 50, 0);
+      if ((itrns % 2) == 0) {
         itrns = itrns
+      } else {
+        itrns = itrns - 1;
       }
-      else {
-        itrns = itrns -1;
-      }
-      top1 = ht1*0.25;
+      top1 = ht1 * 0.25;
       bot1 = ht1 - top1;
       space1 = wd1 / itrns;
 
 
       ctx.strokeStyle = trusscol;
-      ctx.moveTo(space1*2, top1);
-      ctx.lineTo(space1*(itrns - 2), top1);
+      ctx.moveTo(space1 * 2, top1);
+      ctx.lineTo(space1 * (itrns - 2), top1);
       ctx.stroke();
 
       ctx.moveTo(space1, bot1);
-      ctx.lineTo(wd1-space1, bot1);
+      ctx.lineTo(wd1 - space1, bot1);
       ctx.stroke();
 
       var j;
-      for (j =1; j <= itrns-2; j+= 2) {
-        ctx.moveTo(space1*j, bot1);
-        ctx.lineTo(space1*(j+1), top1);
+      for (j = 1; j <= itrns - 2; j += 2) {
+        ctx.moveTo(space1 * j, bot1);
+        ctx.lineTo(space1 * (j + 1), top1);
         ctx.stroke();
 
-        ctx.moveTo(space1*(j+1), top1);
-        ctx.lineTo(space1*(j+2), bot1);
+        ctx.moveTo(space1 * (j + 1), top1);
+        ctx.lineTo(space1 * (j + 2), bot1);
         ctx.stroke();
       }
     }
@@ -79,11 +76,11 @@
       var s = d.getSeconds();
       var m = d.getMinutes();
       var h = d.getHours();
-      document.getElementById("clock").textContent ="🕐 Current Time: " + ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
+      document.getElementById("clock").textContent = "🕐 Current Time: " + ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
     }
 
     /*sets interval for time update to 1 second */
-    setInterval(time,1000);
+    setInterval(time, 1000);
 
     /*changes colors of items for the dark theme*/
     function darktheme(rand1, rand2, rand3) {
@@ -91,27 +88,27 @@
       var themecol2 = "#3b3737" /*darker grey*/
       var bordcol = "#9fa9bd" /*light grey border color*/
       var fontcol = "black"
-      t = ['content','resource_one','pageimg', 'submenu']
-      for (var j = 0; j<t.length; j++){
+      t = ['content', 'resource_one', 'pageimg', 'submenu']
+      for (var j = 0; j < t.length; j++) {
         var obj = document.getElementsByClassName(t[j])
         for (var i = 0; i < obj.length; i++) {
           obj[i].style.backgroundColor = themecol;
-          obj[i].style.borderColor= bordcol;
+          obj[i].style.borderColor = bordcol;
           obj[i].style.color = fontcol;
         }
       }
 
       document.body.style.backgroundColor = themecol2;
       document.getElementsByClassName("container").backgroundColor = themecol2;
-      document.getElementById("truss").style.backgroundColor= themecol2;
+      document.getElementById("truss").style.backgroundColor = themecol2;
       document.getElementById("head1").style.color = rand3;
 
       k = ['smenuitem', 'footer', 'theme']
-      for (var j = 0; j<t.length; j++){
+      for (var j = 0; j < t.length; j++) {
         var obj = document.getElementsByClassName(k[j])
         for (var i = 0; i < obj.length; i++) {
           obj[i].style.backgroundColor = rand2;
-          obj[i].style.borderColor= bordcol;
+          obj[i].style.borderColor = bordcol;
         }
       }
       document.getElementById("rst").style.backgroundColor = rand1;
@@ -128,27 +125,27 @@
       var themecol2 = "white" /*darker grey*/
       var bordcol = "black" /*light grey border color*/
       var fontcol = "black"
-      t = ['content','resource_one','pageimg', 'submenu']
-      for (var j = 0; j<t.length; j++){
+      t = ['content', 'resource_one', 'pageimg', 'submenu']
+      for (var j = 0; j < t.length; j++) {
         var obj = document.getElementsByClassName(t[j])
         for (var i = 0; i < obj.length; i++) {
           obj[i].style.backgroundColor = themecol;
-          obj[i].style.borderColor= bordcol;
+          obj[i].style.borderColor = bordcol;
           obj[i].style.color = fontcol;
         }
       }
       document.body.style.backgroundColor = themecol2;
       document.getElementsByClassName("container").backgroundColor = themecol2;
-      document.getElementById("truss").style.backgroundColor= themecol2;
+      document.getElementById("truss").style.backgroundColor = themecol2;
       document.getElementById("head1").style.color = rand1;
 
 
       k = ['smenuitem', 'footer', 'theme']
-      for (var j = 0; j<t.length; j++){
+      for (var j = 0; j < t.length; j++) {
         var obj = document.getElementsByClassName(k[j])
         for (var i = 0; i < obj.length; i++) {
           obj[i].style.backgroundColor = rand2;
-          obj[i].style.borderColor= bordcol;
+          obj[i].style.borderColor = bordcol;
         }
       }
       document.getElementById("rst").style.backgroundColor = rand1;
@@ -161,28 +158,27 @@
 
     /*sets the current status of theme up for whenever another page is opened*/
     function varpass(theme) {
-      sessionStorage.setItem("theme",theme);
+      sessionStorage.setItem("theme", theme);
     }
 
     /*assigns three random colors for the theme of the page*/
     function colorrand1(theme) {
-      coltool = ["","",""];
-      for (var ij=0; ij<3; ij++) {
-        coltool[ij] = '#'+Math.floor(Math.random()*16777215).toString(16);
+      coltool = ["", "", ""];
+      for (var ij = 0; ij < 3; ij++) {
+        coltool[ij] = '#' + Math.floor(Math.random() * 16777215).toString(16);
       }
 
       var rand1 = coltool[0];
       var rand2 = coltool[1];
       var rand3 = coltool[2];
-      sessionStorage.setItem("rand1",rand1);
-      sessionStorage.setItem("rand2",rand2);
-      sessionStorage.setItem("rand3",rand3);
+      sessionStorage.setItem("rand1", rand1);
+      sessionStorage.setItem("rand2", rand2);
+      sessionStorage.setItem("rand3", rand3);
       var theme = sessionStorage.getItem("theme");
 
       if (theme == "dark") {
         darktheme(rand1, rand2, rand3);
-      }
-      else {
+      } else {
         lighttheme(rand1, rand2, rand3);
       }
     }
@@ -192,10 +188,10 @@
       var rand1 = "red";
       var rand2 = "#5995DA";
       var rand3 = "black";
-      sessionStorage.setItem("rand1",rand1);
-      sessionStorage.setItem("rand2",rand2);
-      sessionStorage.setItem("rand3",rand3);
-      lighttheme(rand1,rand2,rand3);
+      sessionStorage.setItem("rand1", rand1);
+      sessionStorage.setItem("rand2", rand2);
+      sessionStorage.setItem("rand3", rand3);
+      lighttheme(rand1, rand2, rand3);
     }
   </script>
 
@@ -207,7 +203,8 @@
 
   <body onload="init()" onresize="resizifier()">
     <!-- header %%%%%%%%%%%%%%%%%%%%%%%%%edit%-->
-    <div class='container'>
+
+    <div class='menu_container'>
       <div class='header'>
         <canvas id="truss"></canvas>
         <div class="headertxt">
@@ -226,65 +223,81 @@
         <button class="theme" onclick="colorrand1()">Randomize Colors</button>
         <button class="theme" id="rst" onclick="colreset()">Reset</button>
       </div>
+      <div class="emptyspacer"></div>
+    </div>
 
 
-      <div class="body_container">
+    <div class="body_container">
       <!-- main body %%%%%%%%%%%%%%%%%%%%%%%%%%-->
-      <div class="resource_one"><h2>Resources</h2>
+      <div class="resource_one">
+        <h2>Resources</h2>
         <div class="rmenuitem">
-          <a href="#" >
-            <img src="images/pitt_swanson.png" id="rsc"/>
-          </a>
-        </div>
-        <div class="rmenuitem">
-          <a href="#" >
-            <img src="images/pitt.png" id="rsc"/>
-          </a>
-        </div>
-        <div class="rmenuitem">
-          <a href="#" >
-            <img src="images/ASCE.png" id="rsc"/>
+          <a href="#">
+            <img src="images/pitt_swanson.png" id="rsc" />
           </a>
         </div>
         <div class="rmenuitem">
           <a href="#">
-            <img src="images/AASHTO.png" id="rsc"/>
+            <img src="images/pitt.png" id="rsc" />
           </a>
         </div>
         <div class="rmenuitem">
-          <a href="#" >
-            <img src="images/ICC.png" id="rsc"/>
+          <a href="#">
+            <img src="images/ASCE.png" id="rsc" />
           </a>
         </div>
-      </div>
-      <div class="submenu">
-        <h2>Submenu</h2>
-        <div class="smenuitem" id="me">
-          <img src="images/personal.png" width="100px" height="100px" />
+        <div class="rmenuitem">
+          <a href="#">
+            <img src="images/AASHTO.png" id="rsc" />
+          </a>
         </div>
-        <div class="smenuitem"></div>
-        <div class="smenuitem"></div>
-        <div class="smenuitem"></div>
-        <div class="smenuitem"></div>
+        <div class="rmenuitem">
+          <a href="#">
+            <img src="images/ICC.png" id="rsc" />
+          </a>
+        </div>
+        <h2></h2>
       </div>
+
+
+      <div class="submenu">
+        <h2>Extras</h2>
+        <div class="smenuitem" id="me">
+          <img src="images/personal.png" id="rsc" />
+        </div>
+        <div class="smenuitem">
+          <img src="images/linkedin.png" id="rsc" />
+        </div>
+        <div class="smenuitem">
+          <img src="images/spotify.png" id="rsc" />
+        </div>
+        <h2></h2>
+      </div>
+
       <div class="pageimg">
-        <img id="pgh" src="images/pgh.png"/>
+        <img id="pgh" src="images/pgh.png" />
       </div>
+
+
       <div class="content">
         <h2>Home</h2>
         <p id="test"></p>
+        <embed id="embcontent" src="embedhtml/homepage.html"></embed>
       </div>
-      <div class="footer" id="col1"><h2>Footer</h2></div>
 
-      <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="#">Home</a>
-        <a href="bridge_types.html">Types of Bridges</a>
-        <a href="#">Fundamentals</a>
-        <a href="#">About me</a>
-        <a href="#">Assets</a>
+      <div class="footer" id="col1">
+        <h2>Footer</h2>
       </div>
-      </div>
+
+    </div>
+
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="index.html">Home</a>
+      <a href="bridge_types.html">Types of Bridges</a>
+      <a href="#">Fundamentals</a>
+      <a href="#">About me</a>
+      <a href="#">Assets</a>
     </div>
 
   </body>
