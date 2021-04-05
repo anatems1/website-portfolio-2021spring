@@ -33,7 +33,7 @@
     function drawtruss(trusscol) {
       var canvas = document.getElementById("truss");
       var ctx = canvas.getContext("2d");
-      ht1 = window.innerHeight * 0.15;
+      ht1 = 139;
       wd1 = window.innerWidth - 33;
       canvas.width = wd1;
       canvas.height = ht1;
@@ -184,7 +184,8 @@
       }
     }
 
-    function dynamic(){
+    function dynamic() {
+      var ab = 26;
     }
 
     /*resets colors to original theme */
@@ -244,27 +245,27 @@
       <div class="resource_one">
         <h2>Resources</h2>
         <div class="rmenuitem">
-          <a href="#">
+          <a href="https://www.engineering.pitt.edu/Departments/Civil-Environmental/" target="_blank">
             <img src="images/pitt_swanson.png" id="rsc" />
           </a>
         </div>
         <div class="rmenuitem">
-          <a href="#">
+          <a href="https://www.pitt.edu/" target="_blank">
             <img src="images/pitt.png" id="rsc" />
           </a>
         </div>
         <div class="rmenuitem">
-          <a href="#">
+          <a href="https://www.asce.org/" target="_blank">
             <img src="images/ASCE.png" id="rsc" />
           </a>
         </div>
         <div class="rmenuitem">
-          <a href="#">
+          <a href="https://www.transportation.org/" target="_blank">
             <img src="images/AASHTO.png" id="rsc" />
           </a>
         </div>
         <div class="rmenuitem">
-          <a href="#">
+          <a href="https://www.iccsafe.org/" target="_blank">
             <img src="images/ICC.png" id="rsc" />
           </a>
         </div>
@@ -273,16 +274,25 @@
 
 
       <div class="submenu">
-        <h2>Extras</h2>
-        <div class="smenuitem" id="me">
-          <img src="images/personal.png" id="rsc" />
+        <h2>Submenu</h2>
+        <div class="smenuitem" id="smenuimg">
+          <a href="#">
+            <img src="images/personal.png" id="rsc"/>
+          </a>
         </div>
-        <div class="smenuitem">
-          <img src="images/linkedin.png" id="rsc" />
+        <p id="smenutxt">Me</p>
+        <div class="smenuitem" id="smenuimg">
+          <a href="#">
+            <img src="images/linkedin.png" id="rsc"/>
+          </a>
         </div>
-        <div class="smenuitem">
-          <img src="images/spotify.png" id="rsc" />
+        <p id="smenutxt">Linked-In</p>
+        <div class="smenuitem" id="smenuimg">
+          <a href="#">
+            <img src="images/spotify.png" id="rsc"/>
+          </a>
         </div>
+        <p id="smenutxt">Spotify</p>
         <div id="extraspace"></div>
       </div>
 
@@ -293,8 +303,9 @@
 
       <div class="content">
         <h2>Home</h2>
-        <p id="test"></p>
-        <embed id="embcontent" src="embedhtml/homepage.html"></embed>
+        <p id="test">Hello</p>
+        <embed id="embcontent" src="embedhtml/MSResume.pdf" type="application/pdf"></embed>
+
       </div>
 
       <div class="footer" id="col1">

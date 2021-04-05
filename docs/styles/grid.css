@@ -6,6 +6,7 @@ body {
   align-content: center;
   justify-content: center;
   overflow: hidden;
+  font-family: Verdana;
 }
 
 .menu_container {
@@ -17,9 +18,9 @@ body {
 
 
 .body_container {
-  max-height: 81vh;
+  max-height: 82vh;
   display: grid;
-  grid-template-columns: 1fr 0.75fr 2fr 2fr 1fr 1fr;
+  grid-template-columns: 1fr 150px 2fr 2fr 100px 1fr;
   grid-template-rows: repeat(4, minmax(20px, max-content));
   grid-gap: 10px;
   z-index: 0;
@@ -35,16 +36,14 @@ body {
   border-radius: 0px;
 }
 
-h1, h2, .menu, .openbtn, .theme, .sidebar a {
-  font-family: Impact;
-}
-
 h2 {
-  font-size: 18px;
-  text-align: center;
+  font-size: 16px;
   text-decoration: underline;
 }
 
+.openbtn, .theme, #clock, .sidebar a, #smenutxt {
+  font-size: 12px;
+}
 /* header %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .header{
   grid-row: 1/1;
@@ -89,11 +88,12 @@ canvas#truss {
 
 .theme {
   cursor: pointer;
-  background-color: ;
+  background-color: #5995DA;
   color: Black;
   padding: 5px 5px;
   border: 1px solid white;
   flex: initial;
+  outline: none;
 }
 
 #rst {
@@ -117,7 +117,7 @@ canvas#truss {
   width: 100%;
   height: 0px;
   z-index: 999;
-  background-color: black;
+  background-color: #5995DA;
   overflow-x: hidden;
   overflow-y: hidden;
   transition: 0.5s;
@@ -156,14 +156,20 @@ canvas#truss {
 }
 
 .content{
-  min-height: 100vh;
+  height: 1000px;
   grid-row: 2/4;
   grid-column: 3/5;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
 }
 
 #embcontent {
-  width: 100%;
+  flex: 1;
   height: 100%;
+
 }
 
 .submenu {
@@ -173,16 +179,21 @@ canvas#truss {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: space-between;
 }
 
 .smenuitem {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   background-color: #5995DA;
   border: 3px solid #5995DA;
   border-radius: 100px;
   margin: 10px 10px 10px 10px;
+  text-align: center;
+}
+
+#smenutxt {
+  text-decoration: underline;
+  margin: 0px 0px 10px 0px;
 }
 
 .resource_one {
@@ -208,10 +219,21 @@ canvas#truss {
   width: 100%;
   height: 100%;
   object-fit: scale-down;
+  transform-origin: bottom;
 }
 
+#smenuimg:hover {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  height: 110px;
+  width: 110px;
+  border: 10px solid black;
+  transition: 0.75s;
+}
+
+
 #extraspace {
-  height: 50vh;
+  height: 300px;
 }
 .footer {
   text-align:left;
@@ -225,6 +247,5 @@ canvas#truss {
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
+
 }
