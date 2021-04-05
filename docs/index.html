@@ -2,13 +2,13 @@
 <html lang="en" dir="ltr">
   <script>
     function openNav() {
-      document.getElementById("mySidebar").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
+      document.getElementById("mySidebar").style.width = "100%";
+      document.getElementById("mySidebar").style.height = "50px";
     }
 
     function closeNav() {
-      document.getElementById("mySidebar").style.width = "0px";
-      document.getElementById("main").style.marginLeft = "0";
+      document.getElementById("mySidebar").style.width = "100%";
+      document.getElementById("mySidebar").style.height = "0px";
     }
 
     /*tells the page what to do on once openeed up or _ initialized*/
@@ -103,7 +103,7 @@
       document.getElementById("truss").style.backgroundColor = themecol2;
       document.getElementById("head1").style.color = rand3;
 
-      k = ['smenuitem', 'footer', 'theme']
+      k = ['smenuitem', 'footer', 'theme', 'sidebar']
       for (var j = 0; j < t.length; j++) {
         var obj = document.getElementsByClassName(k[j])
         for (var i = 0; i < obj.length; i++) {
@@ -140,7 +140,8 @@
       document.getElementById("head1").style.color = rand1;
 
 
-      k = ['smenuitem', 'footer', 'theme']
+
+      k = ['smenuitem', 'footer', 'theme', 'sidebar']
       for (var j = 0; j < t.length; j++) {
         var obj = document.getElementsByClassName(k[j])
         for (var i = 0; i < obj.length; i++) {
@@ -183,6 +184,9 @@
       }
     }
 
+    function dynamic(){
+    }
+
     /*resets colors to original theme */
     function colreset() {
       var rand1 = "red";
@@ -221,12 +225,11 @@
         <button class="theme" onclick="darktheme()">Dark</button>
         <button class="theme" onclick="lighttheme()">Light</button>
         <button class="theme" onclick="colorrand1()">Randomize Colors</button>
+        <button class="theme" id="dynm" onclick="dynamic()">Dynamic</button>
         <button class="theme" id="rst" onclick="colreset()">Reset</button>
       </div>
-      <div class="emptyspacer"></div>
 
       <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <a href="index.html">Home</a>
         <a href="bridge_types.html">Types of Bridges</a>
         <a href="#">Fundamentals</a>
@@ -236,7 +239,7 @@
     </div>
 
 
-    <div class="body_container">
+    <div class="body_container" onclick="closeNav()">
       <!-- main body %%%%%%%%%%%%%%%%%%%%%%%%%%-->
       <div class="resource_one">
         <h2>Resources</h2>
