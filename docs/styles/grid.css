@@ -92,7 +92,7 @@
   .smenuitem {
     background-color: #5995DA;
     border: 3px solid #5995DA;
-    border-radius: 100px;
+    border-radius: 200px;
     margin: 10px 10px 10px 10px;
     text-align: center;
   }
@@ -103,7 +103,7 @@
 
 
   /*%%%%%%%%%%%%%%%%%%%%%%%% MOBILE LAYOUT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 950px) {
     h2 {
       font-size: 16px;
     }
@@ -173,6 +173,18 @@
 
     }
 
+    .rmenuitem {
+      height: 15%;
+      width: 75%;
+      background-color: transparent;
+      text-align: center;
+    }
+
+    .smenuitem {
+      height: 50%;
+      width: 50%;
+    }
+
     .submenu {
       grid-row: 3/3;
       grid-column: 1/3;
@@ -182,11 +194,14 @@
       text-align: center;
       display: flex;
       flex-direction: column;
+      flex-wrap: nowrap;
       justify-content: space-between;
-      padding: 25px auto;
     }
+
     .submenu, .resource_one, .footer, .pageimg {
       border: 1px solid black;
+      text-align: center;
+      align-items: center;
     }
     .content {
       grid-row: 2/2;
@@ -208,16 +223,16 @@
     }
   }
 
-  /*%%%%%%%%%%%%%%%%%%%%%% TABLET LAYOUT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+  /*%%%%%%%%%%%%%%%%%%%%%% TABLET LAYOUT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   @media only screen and (min-width: 401px) and (max-width: 960px) {
     /*header items %%%%%%%%%%%%*/
     /*menu items %%%%%%%%%%%%%%*/
     /*menubar %%%%%%%%%%%%%%%%%%*/
     /*main content %%%%%%%%%%%%%%*/
-  }
+
 
   /*%%%%%%%%%%%%%%%%%%%%%% DESKTOP LAYOUT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
-  @media only screen and (min-width: 961px) {
+  @media only screen and (min-width: 951px) {
     body {
       overflow: hidden;
     }
@@ -314,6 +329,7 @@
 
     #rst {
       background-color: red;
+      object-fit: scale-down;
     }
 
     .openbtn:hover, .theme:hover, #rst:hover {
