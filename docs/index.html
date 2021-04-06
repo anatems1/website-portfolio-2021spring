@@ -2,13 +2,25 @@
 <html lang="en" dir="ltr">
   <script>
     function openNav() {
-      document.getElementById("mySidebar").style.width = "100%";
-      document.getElementById("mySidebar").style.height = "50px";
+      if (window.innerWidth<401) {
+        document.getElementById("mySidebar").style.width = "100%";
+        document.getElementById("mySidebar").style.height = "200px";
+      }
+      else {
+        document.getElementById("mySidebar").style.width = "100%";
+        document.getElementById("mySidebar").style.height = "50px";
+      }
     }
 
     function closeNav() {
-      document.getElementById("mySidebar").style.width = "100%";
-      document.getElementById("mySidebar").style.height = "0px";
+      if (window.innerWidth<401) {
+        document.getElementById("mySidebar").style.width = "100%";
+        document.getElementById("mySidebar").style.height = "0px";
+      }
+      else {
+        document.getElementById("mySidebar").style.width = "100%";
+        document.getElementById("mySidebar").style.height = "0px";
+      }
     }
 
     /*tells the page what to do on once openeed up or _ initialized*/
@@ -202,6 +214,8 @@
 
   <head>
     <meta charset="utf-8">
+    <meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <title>Structural Engineering</title>
     <link rel='stylesheet' href='styles/grid.css' />
   </head>
@@ -223,11 +237,13 @@
         <button class="openbtn" onclick="openNav()">&#9776; Toggle Menu</button>
         <div class='menu' id="blankspace"></div>
         <div id="clock"></div>
-        <button class="theme" onclick="darktheme()">Dark</button>
-        <button class="theme" onclick="lighttheme()">Light</button>
-        <button class="theme" onclick="colorrand1()">Randomize Colors</button>
-        <button class="theme" id="dynm" onclick="dynamic()">Dynamic</button>
-        <button class="theme" id="rst" onclick="colreset()">Reset</button>
+        <div id="btns">
+          <button class="theme" onclick="darktheme()">Dark</button>
+          <button class="theme" onclick="lighttheme()">Light</button>
+          <button class="theme" onclick="colorrand1()">Randomize Colors</button>
+          <button class="theme" id="dynm" onclick="dynamic()">Dynamic</button>
+          <button class="theme" id="rst" onclick="colreset()">Reset</button>
+        </div>
       </div>
 
       <div id="mySidebar" class="sidebar">
@@ -303,13 +319,22 @@
 
       <div class="content">
         <h2>Home</h2>
-        <p id="test">Hello</p>
-        <embed id="embcontent" src="embedhtml/MSResume.pdf" type="application/pdf"></embed>
+        <!--<p id="test"></p>-->
+        <!--<embed id="embcontent" src="embedhtml/MSResume.pdf" type="application/pdf"></embed>-->
+        <embed id="embedcontent" src="embedhtml/homepage.html" />
 
       </div>
 
       <div class="footer" id="col1">
         <h2>Footer</h2>
+        <p>
+          **DISCLAIMER: The images from other corporations are used to promote them**
+          <br />Swanson Image - source: https://www.engineering.pitt.edu/Departments/Civil-Environmental/
+          <br />Pitt Image - source: https://www.pitt.edu/
+          <br />ASCE Image - source: https://www.asce.org/
+          <br />AASHTO Image - source: https://www.transportation.org/
+          <br />ICC Image - soruce: https://www.iccsafe.org/
+        </p>
       </div>
 
     </div>

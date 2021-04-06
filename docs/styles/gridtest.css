@@ -1,0 +1,123 @@
+body {
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  font-family: Verdana;
+}
+
+
+h2 {
+  text-decoration: underline;
+}
+
+/* header %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+.header {
+  position: relative;
+}
+
+.header .headertxt {
+  position: absolute;
+  margin: 0 auto;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 30px;
+  /* Adjust this value to move the positioned div up and down */
+  text-align: center;
+  width: 100%;
+  color: red;
+}
+
+canvas#truss {
+  background: white;
+}
+
+/* menu items %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+.menu {
+  background-color: black;
+  color: #fff;
+}
+
+.openbtn, #clock {
+  background-color: black;
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.theme {
+  cursor: pointer;
+  background-color: #5995DA;
+  color: Black;
+  border: 1px solid white;
+  flex: initial;
+}
+
+#rst {
+  background-color: red;
+}
+
+.openbtn:hover, .theme:hover, #rst:hover {
+  background-color: #444;
+}
+
+.menu #blankspace {
+  flex: 1;
+}
+
+/*menubar %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+.sidebar {
+  width: 100%;
+  height: 0px;
+  z-index: 999;
+  background-color: #5995DA;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.sidebar a {
+  margin: 5px auto;
+  margin-top: 15px;
+  text-decoration: underline;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+
+/* main contents %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+.pageimg {
+  margin-top: 10px;
+}
+
+#pgh {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+#embedcontent {
+  flex: 1;
+}
+
+.smenuitem {
+  background-color: #5995DA;
+  border: 3px solid #5995DA;
+  border-radius: 100px;
+  margin: 10px 10px 10px 10px;
+  text-align: center;
+}
+
+.footer {
+  background-color: #5995DA;
+}
