@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <script>
+    function resizeembed(obj) {
+      obj.style.height =  '1000px';
+      document.getElementById("test").textContent = document.getElementById("embedcontent").style.naturalHeight;
+
+    }
     function openNav() {
       if (window.innerWidth<951) {
         document.getElementById("mySidebar").style.width = "100%";
@@ -37,7 +42,7 @@
     }
 
     /*activates function for when the page is resized*/
-    function resizifier() {
+    function resizifier(trusscol) {
       drawtruss(trusscol);
     }
 
@@ -46,7 +51,7 @@
       var canvas = document.getElementById("truss");
       var ctx = canvas.getContext("2d");
       ht1 = 139;
-      wd1 = window.innerWidth - 33;
+      wd1 = window.innerWidth;
       canvas.width = wd1;
       canvas.height = ht1;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -124,11 +129,10 @@
         }
       }
       document.getElementById("rst").style.backgroundColor = rand1;
-
-      trusscol = rand1;
-      drawtruss(trusscol);
       var theme = "dark"
       varpass(theme);
+      trusscol = rand1;
+      drawtruss(trusscol);
     }
 
     /*changes colors of items for the light theme*/
@@ -163,10 +167,10 @@
       }
       document.getElementById("rst").style.backgroundColor = rand1;
 
-      trusscol = rand3;
-      drawtruss(trusscol);
       var theme = "light"
       varpass(theme);
+      trusscol = rand3;
+      drawtruss(trusscol);
     }
 
     /*sets the current status of theme up for whenever another page is opened*/
@@ -220,7 +224,7 @@
     <link rel='stylesheet' href='styles/grid.css' />
   </head>
 
-  <body onload="init()" onresize="resizifier()">
+  <body onload="init()" onresize="resizifier()" onscroll="closeNav()">
     <!-- header %%%%%%%%%%%%%%%%%%%%%%%%%edit%-->
 
     <div class='menu_container'>
@@ -256,7 +260,7 @@
     </div>
 
 
-    <div class="body_container" onclick="closeNav()">
+    <div class="body_container" onclick="closeNav()" >
       <!-- main body %%%%%%%%%%%%%%%%%%%%%%%%%%-->
       <div class="resource_one">
         <h2>Resources</h2>
@@ -317,11 +321,11 @@
       </div>
 
 
-      <div class="content">
+      <div class="content" >
         <h2>Home</h2>
-        <!--<p id="test"></p>-->
+        <p id="test"></p>
         <!--<embed id="embcontent" src="embedhtml/MSResume.pdf" type="application/pdf"></embed>-->
-        <embed id="embedcontent" src="embedhtml/homepage.html" />
+        <embed id="embedcontent" src="embedhtml/homepage.html" onload="resizeembed(this)" />
 
       </div>
 
