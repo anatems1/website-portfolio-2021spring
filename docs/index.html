@@ -2,8 +2,9 @@
 <html lang="en" dir="ltr">
   <script>
     function resizeembed(pght) {
+      var pght = localStorage.getItem("pght");
       newht =  pght+ "px";
-      document.getElementById("test").textContent = newht;
+      /*document.getElementById("test").textContent = newht;*/
       document.getElementById("embedcontent").style.height = newht;
     }
 
@@ -27,6 +28,9 @@
         document.getElementById("mySidebar").style.width = "100%";
         document.getElementById("mySidebar").style.height = "0px";
       }
+      var pght = localStorage.getItem("pght");
+      resizeembed(pght);
+      resizifier();
     }
 
     /*tells the page what to do on once openeed up or _ initialized*/
@@ -40,6 +44,8 @@
       } else {
         lighttheme(rand1, rand2, rand3);
       }
+      var pght = localStorage.getItem("pght");
+      resizeembed(pght);
     }
 
     /*activates function for when the page is resized*/
@@ -56,8 +62,6 @@
           trusscol = rand3;
           drawtruss(trusscol);
       }
-      var pght = sessionStorage.getItem("pght");
-      resizeembed(pght);
     }
 
     /*code for drawing the truss in the header and setting the scale */
@@ -236,7 +240,7 @@
     <link rel='stylesheet' href='styles/grid.css' />
   </head>
 
-  <body onload="init()" onresize="resizifier()" onscroll="closeNav()">
+  <body onload="init()" onresize="closeNav()" onscroll="closeNav()">
     <!-- header %%%%%%%%%%%%%%%%%%%%%%%%%edit%-->
 
     <div class='menu_container'>
@@ -333,9 +337,9 @@
       </div>
 
 
-      <div class="content" id=#embeded>
+      <div class="content" id=#embeded onload="closeNav()">
         <h2>Home</h2>
-        <p id="test"></p>
+        <!--<p id="test"></p>-->
         <!--<embed id="embcontent" src="embedhtml/MSResume.pdf" type="application/pdf"></embed>-->
         <embed id="embedcontent" src="embedhtml/homepage.html"/>
 

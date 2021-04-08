@@ -2,4 +2,6 @@
   display: grid;
   height: max-content;
   overflow-y: hidden;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }

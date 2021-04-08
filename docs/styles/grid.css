@@ -11,6 +11,7 @@
   h2 {
     text-decoration: underline;
     text-align: center;
+    margin=bottom: 0px;
   }
 
   h1 {
@@ -416,13 +417,13 @@
     }
 
     .content {
-      grid-row: 2/4;
+      grid-row: 2/3;
       grid-column: 3/5;
       overflow: hidden;
     }
 
     #embcontent {
-      overflow: hidden;
+      overflow-y: hidden;
       margin-top: 0px;
       margin-bottom: 0px;
     }
