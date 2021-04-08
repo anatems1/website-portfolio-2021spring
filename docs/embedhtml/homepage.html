@@ -1,34 +1,66 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <script>
+    function heightdim1() {
+      divElement = document.querySelector(".body_container");
+      elemHeight = divElement.clientHeight +300;
+      sessionStorage.setItem("pght", elemHeight);
+      document.getElementById("test1").textContent = elemHeight;
+    }
+  </script>
+
   <head>
     <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <title>Homepage</title>
+    <link rel='stylesheet' href='../styles/embed.css' />
   </head>
-  <body>
-      <div class="bodytext">
-      <p>
-      This is my homepage!
-      <br />The idea is to include as much information about my major as I possibly can in
-      the alloted time we have to work on this project. I would like to also use this page to explain why
-      civil engineering is so important in society and more specifically how structural engineering
-      has impacted the world for many centuries.
-      This is my homepage!
-      <br />The idea is to include as much information about my major as I possibly can in
-      the alloted time we have to work on this project. I would like to also use this page to explain why
-      civil engineering is so important in society and more specifically how structural engineering
-      has impacted the world for many centuries.
-      This is my homepage!
-      <br />The idea is to include as much information about my major as I possibly can in
-      the alloted time we have to work on this project. I would like to also use this page to explain why
-      civil engineering is so important in society and more specifically how structural engineering
-      has impacted the world for many centuries.
-      This is my homepage!
-      <br />The idea is to include as much information about my major as I possibly can in
-      the alloted time we have to work on this project. I would like to also use this page to explain why
-      civil engineering is so important in society and more specifically how structural engineering
-      has impacted the world for many centuries.
-      </p>
-      </div>
 
+  <body onresize="heightdim1()">
+    <div class="body_container" id="bodytext1">
+      <p>
+        This is my homepage!
+        <br />The idea is to include as much information about my major as I possibly can in
+        the alloted time we have to work on this project. I would like to also use this page to explain why
+        civil engineering is so important in society and more specifically how structural engineering
+        has impacted the world for many centuries.
+        This is my homepage!
+        <br />The idea is to include as much information about my major as I possibly can in
+        the alloted time we have to work on this project. I would like to also use this page to explain why
+        civil engineering is so important in society and more specifically how structural engineering
+        has impacted the world for many centuries.
+        This is my homepage!
+        <br />The idea is to include as much information about my major as I possibly can in
+        the alloted time we have to work on this project. I would like to also use this page to explain why
+        civil engineering is so important in society and more specifically how structural engineering
+        has impacted the world for many centuries.
+        This is my homepage!
+        <br />The idea is to include as much information about my major as I possibly can in
+        the alloted time we have to work on this project. I would like to also use this page to explain why
+        civil engineering is so important in society and more specifically how structural engineering
+        has impacted the world for many centuries.
+        <br />The idea is to include as much information about my major as I possibly can in
+        the alloted time we have to work on this project. I would like to also use this page to explain why
+        civil engineering is so important in society and more specifically how structural engineering
+        has impacted the world for many centuries.
+        This is my homepage!
+        <br />The idea is to include as much information about my major as I possibly can in
+        the alloted time we have to work on this project. I would like to also use this page to explain why
+        civil engineering is so important in society and more specifically how structural engineering
+        has impacted the world for many centuries.
+        This is my homepage!
+        <br />The idea is to include as much information about my major as I possibly can in
+        the alloted time we have to work on this project. I would like to also use this page to explain why
+        civil engineering is so important in society and more specifically how structural engineering
+        has impacted the world for many centuries.
+        <br />The idea is to include as much information about my major as I possibly can in
+        the alloted time we have to work on this project. I would like to also use this page to explain why
+        civil engineering is so important in society and more specifically how structural engineering
+        has impacted the world for many centuries.
+        This is my homepage!
+        <p id="test1"></p>
+      </p>
+    </div>
   </body>
+
 </html>

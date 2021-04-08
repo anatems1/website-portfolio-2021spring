@@ -1,0 +1,5 @@
+.body_container {
+  display: grid;
+  height: max-content;
+  overflow-y: hidden;
+}

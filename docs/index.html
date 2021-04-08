@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <script>
-    function resizeembed(obj) {
-      obj.style.height =  '1000px';
-      document.getElementById("test").textContent = document.getElementById("embedcontent").style.naturalHeight;
-
+    function resizeembed(pght) {
+      newht =  pght+ "px";
+      document.getElementById("test").textContent = newht;
+      document.getElementById("embedcontent").style.height = newht;
     }
+
     function openNav() {
       if (window.innerWidth<951) {
         document.getElementById("mySidebar").style.width = "100%";
@@ -43,7 +44,20 @@
 
     /*activates function for when the page is resized*/
     function resizifier(trusscol) {
-      drawtruss(trusscol);
+      var theme = sessionStorage.getItem("theme");
+      var rand1 = sessionStorage.getItem("rand1");
+      var rand2 = sessionStorage.getItem("rand2");
+      var rand3 = sessionStorage.getItem("rand3");
+
+      if (theme == "dark") {
+          trusscol = rand3;
+          drawtruss(trusscol);
+      } else {
+          trusscol = rand3;
+          drawtruss(trusscol);
+      }
+      var pght = sessionStorage.getItem("pght");
+      resizeembed(pght);
     }
 
     /*code for drawing the truss in the header and setting the scale */
@@ -118,7 +132,7 @@
       document.body.style.backgroundColor = themecol2;
       document.getElementsByClassName("container").backgroundColor = themecol2;
       document.getElementById("truss").style.backgroundColor = themecol2;
-      document.getElementById("head1").style.color = rand3;
+      document.getElementById("head1").style.color = rand1;
 
       k = ['smenuitem', 'footer', 'theme', 'sidebar']
       for (var j = 0; j < t.length; j++) {
@@ -131,8 +145,7 @@
       document.getElementById("rst").style.backgroundColor = rand1;
       var theme = "dark"
       varpass(theme);
-      trusscol = rand1;
-      drawtruss(trusscol);
+      resizifier();
     }
 
     /*changes colors of items for the light theme*/
@@ -169,8 +182,7 @@
 
       var theme = "light"
       varpass(theme);
-      trusscol = rand3;
-      drawtruss(trusscol);
+      resizifier();
     }
 
     /*sets the current status of theme up for whenever another page is opened*/
@@ -321,11 +333,11 @@
       </div>
 
 
-      <div class="content" >
+      <div class="content" id=#embeded>
         <h2>Home</h2>
         <p id="test"></p>
         <!--<embed id="embcontent" src="embedhtml/MSResume.pdf" type="application/pdf"></embed>-->
-        <embed id="embedcontent" src="embedhtml/homepage.html" onload="resizeembed(this)" />
+        <embed id="embedcontent" src="embedhtml/homepage.html"/>
 
       </div>
 
