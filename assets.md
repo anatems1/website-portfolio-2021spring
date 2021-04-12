@@ -54,6 +54,6 @@
   <td>Beaver rail bridge HAER PA,4-BEAV,1-1 crop</td>
   <td>Saibo</td>
   <td><a href='https://en.wikipedia.org/wiki/Public_domain'>Public Domain</a></td>
-  <td><a href=https://commons.wikimedia.org/wiki/File:Beaver_rail_bridge_HAER_PA,4-BEAV,1-1_crop.jpg'>Link</a></td>
+  <td><a href='https://commons.wikimedia.org/wiki/File:Beaver_rail_bridge_HAER_PA,4-BEAV,1-1_crop.jpg'>Link</a></td>
 </tr>
 </table>

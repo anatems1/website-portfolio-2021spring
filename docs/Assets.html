@@ -3,9 +3,10 @@
   <script>
     /*resizes the embedded section of the page to automatically fit the height of whatever content is inside*/
     function resizeembed(pght) {
-      /*var pght = localStorage.getItem("pght");
+      var pght = localStorage.getItem("pght2");
       newht =  pght+ "px";
-      document.getElementById("embedcontent").style.height = newht;*/
+      /*document.getElementById("test").textContent = newht;*/
+      document.getElementById("embedcontent").style.height = newht;
     }
 
     /*opens the nav bar underneath the menubar*/
@@ -43,10 +44,8 @@
       var rand3 = sessionStorage.getItem("rand3");
       if (theme == "dark") {
         darktheme(rand1, rand2, rand3);
-        document.getElementById('resume').src='images/MSresume-2.png'
       } else {
         lighttheme(rand1, rand2, rand3);
-        document.getElementById('resume').src='images/MSresume-1.png'
       }
       var pght = localStorage.getItem("pght");
       resizeembed(pght);
@@ -154,7 +153,6 @@
       var theme = "dark"
       varpass(theme);
       resizifier();
-      document.getElementById('resume').src='images/MSresume-2.png'
     }
 
     /*changes colors of items for the light theme*/
@@ -192,7 +190,6 @@
       var theme = "light"
       varpass(theme);
       resizifier();
-      document.getElementById('resume').src='images/MSresume-1.png'
     }
 
     /*sets the current status of theme up for whenever another page is opened*/
@@ -243,7 +240,7 @@
     <meta charset="utf-8">
     <meta name='viewport'
       content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
-    <title>About Me</title>
+    <title>Structural Engineering</title>
     <link rel='stylesheet' href='styles/grid.css' />
   </head>
 
@@ -343,11 +340,10 @@
 
 
       <div class="content" id=#embeded onload="closeNav()">
-        <h2>My Resume</h2>
+        <h2>List of Used Assets</h2>
         <!--<p id="test"></p>-->
         <!--<embed id="embcontent" src="embedhtml/MSResume.pdf" type="application/pdf"></embed>-->
-        <!--<embed id="embedcontent" src="embedhtml/homepage.html"/>-->
-        <img src="images/MSresume-1.png" id="resume"/>
+        <embed id="embedcontent" src="embedhtml/assets.html"/>
 
       </div>
 

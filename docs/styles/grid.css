@@ -140,7 +140,7 @@
       margin-top: 210px;
       display: grid;
       grid-template-columns: 5px 1fr 1fr 5px;
-      grid-template-rows: 160px auto auto auto;
+      grid-template-rows: 160px max-content auto auto;
       justify-content: center;
       grid-gap: 10px;
     }
@@ -288,6 +288,7 @@
 
     .body_container {
       margin-top: 175px;
+      width: 100%;
       display: grid;
       grid-template-columns: 1fr 150px 2fr 2fr 150px 1fr;
       grid-template-rows: 220px max-content auto ;
@@ -493,7 +494,7 @@
     .footer {
       text-align: left;
       object-position: left;
-      grid-row: 3/4;
+      grid-row: 4/4;
       grid-column: 1/7;
       background-color: #5995DA;
     }

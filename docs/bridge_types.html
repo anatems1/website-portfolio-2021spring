@@ -4,36 +4,40 @@
     function changer(define) {
       document.getElementById("embedcontent").src='';
       document.getElementById("pgh").src= define;
-      
+
       if (define == 'images/beambridge.jfif') {
         document.getElementById("embedcontent").src= 'https://en.wikipedia.org/wiki/Beam_bridge';
+        document.getElementById('btype').textContent = 'Beam Bridge'
       }
       else if (define == 'images/trussbridge.jpg') {
         document.getElementById("embedcontent").src= 'https://en.wikipedia.org/wiki/Truss_bridge';
+        document.getElementById('btype').textContent = 'Truss Bridge'
       }
       else if (define == 'images/archbridge.jpg') {
         document.getElementById("embedcontent").src= 'https://en.wikipedia.org/wiki/Arch_bridge';
+        document.getElementById('btype').textContent = 'Arch Bridge'
       }
       else if (define == 'images/tarchbridge.jpg') {
         document.getElementById("embedcontent").src= 'https://en.wikipedia.org/wiki/Tied-arch_bridge';
+        document.getElementById('btype').textContent = 'Tied-Arch Bridge'
       }
       else if (define == 'images/suspbridge.jpg') {
         document.getElementById("embedcontent").src= 'https://en.wikipedia.org/wiki/Suspension_bridge';
+        document.getElementById('btype').textContent = 'Suspension Bridge'
       }
       else if (define == 'images/cstayedbridge.jpg') {
         document.getElementById("embedcontent").src= 'https://en.wikipedia.org/wiki/Cable-stayed_bridge#:~:text=A%20cable%2Dstayed%20bridge%20has,a%20series%20of%20parallel%20lines.';
+        document.getElementById('btype').textContent = 'Cable-Stayed Bridge'
       }
       else if (define == 'images/cantileverbridge.jpg') {
         document.getElementById("embedcontent").src= 'https://en.wikipedia.org/wiki/Cantilever_bridge';
+        document.getElementById('btype').textContent = 'Cantilever Bridge'
       }
     }
 
     /*resizes the embedded section of the page to automatically fit the height of whatever content is inside*/
     function resizeembed(pght) {
-      var pght = localStorage.getItem("pght");
-      newht =  pght+ "px";
-      /*document.getElementById("test").textContent = newht;*/
-      document.getElementById("embedcontent").style.height = newht;
+      var x=2;
     }
 
     /*opens the nav bar underneath the menubar*/
@@ -248,6 +252,7 @@
 
     function dynamic() {
       var ab = 26;
+      alert('Dynamic Theme mode still in the works');
     }
 
     /*resets colors to original theme */
@@ -297,7 +302,7 @@
       <div id="mySidebar" class="sidebar"> <!-- links to the other webpages -->
         <a href="index.html">Home</a>
         <a href="bridge_types.html">Types of Bridges</a>
-        <a href="#"><strike>Fundamentals</strike></a> <!--in development-->
+        <a href="#" onclick="alert('In development')"><strike>Fundamentals</strike></a> <!--in development-->
         <a href="Aboutme.html">About me</a>
         <a href="Assets.html">Assets</a>
       </div>
@@ -392,10 +397,10 @@
 
 
       <div class="content" id=#embeded onload="closeNav()">
-        <h2>Bridge</h2>
+        <h2 id='btype'>Long Span Bridges</h2>
         <!--<p id="test"></p>-->
         <!--<embed id="embcontent" src="embedhtml/MSResume.pdf" type="application/pdf"></embed>-->
-        <embed id="embedcontent" src=""/>
+        <iframe id="embedcontent" src='embedhtml/longspanbridge.pdf' SameSite=None height="800px" frameborder="0" scrolling="auto"></iframe>
 
       </div>
 
