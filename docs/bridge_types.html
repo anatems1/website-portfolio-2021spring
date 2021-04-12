@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <script>
+    function changer(define) {
+      document.getElementById("embedcontent").src='';
+      document.getElementById("pgh").src= define;
+      
+      if (define == 'images/beambridge.jfif') {
+        document.getElementById("embedcontent").src= 'https://en.wikipedia.org/wiki/Beam_bridge';
+      }
+      else if (define == 'images/trussbridge.jpg') {
+        document.getElementById("embedcontent").src= 'https://en.wikipedia.org/wiki/Truss_bridge';
+      }
+      else if (define == 'images/archbridge.jpg') {
+        document.getElementById("embedcontent").src= 'https://en.wikipedia.org/wiki/Arch_bridge';
+      }
+      else if (define == 'images/tarchbridge.jpg') {
+        document.getElementById("embedcontent").src= 'https://en.wikipedia.org/wiki/Tied-arch_bridge';
+      }
+      else if (define == 'images/suspbridge.jpg') {
+        document.getElementById("embedcontent").src= 'https://en.wikipedia.org/wiki/Suspension_bridge';
+      }
+      else if (define == 'images/cstayedbridge.jpg') {
+        document.getElementById("embedcontent").src= 'https://en.wikipedia.org/wiki/Cable-stayed_bridge#:~:text=A%20cable%2Dstayed%20bridge%20has,a%20series%20of%20parallel%20lines.';
+      }
+      else if (define == 'images/cantileverbridge.jpg') {
+        document.getElementById("embedcontent").src= 'https://en.wikipedia.org/wiki/Cantilever_bridge';
+      }
+    }
+
     /*resizes the embedded section of the page to automatically fit the height of whatever content is inside*/
     function resizeembed(pght) {
       var pght = localStorage.getItem("pght");
@@ -239,7 +266,7 @@
     <meta charset="utf-8">
     <meta name='viewport'
       content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
-    <title>Structural Engineering</title>
+    <title>Bridge Types</title>
     <link rel='stylesheet' href='styles/grid.css' />
   </head>
 
@@ -311,38 +338,64 @@
 
 
       <div class="submenu">
-        <h2>Submenu</h2> <!-- the submenu is where additional links to various areas of the webpage can be found-->
+        <h2>Types</h2> <!-- the submenu is where additional links to various areas of the webpage can be found-->
         <div class="smenuitem" id="smenuimg">
-          <a href="Aboutme.html">
-            <img src="images/personal.png" id="rsc" alt='photo of me'/>
+          <a href="#" onclick="changer('images/beambridge.jfif')">
+            <img src="images/beam.png" id="rsc" alt='beam bridge'/>
           </a>
         </div>
-        <p id="smenutxt">Me</p>
+        <p id="smenutxt">Beam</p>
         <div class="smenuitem" id="smenuimg">
-          <a href="https://www.linkedin.com/in/mason-smetana-3379a01a0" target="_blank">
-            <img src="images/linkedin.png" id="rsc" alt='linkedin logo'/>
+          <a href="#" onclick="changer('images/trussbridge.jpg')">
+            <img src="images/truss.png" id="rsc" alt='Truss Bridge'/>
           </a>
         </div>
-        <p id="smenutxt">Linked-In</p>
+        <p id="smenutxt">Truss</p>
         <div class="smenuitem" id="smenuimg">
-          <a href="https://open.spotify.com/user/mrs196?si=lFaACC6QSQW1B21XcfEWig" target="_blank">
-            <img src="images/spotify.png" id="rsc" alt='spotify logo'/>
+          <a href="#" onclick="changer('images/archbridge.jpg')">
+            <img src="images/arch.png" id="rsc" alt='Arch Bridge'/>
           </a>
         </div>
-        <p id="smenutxt">Spotify</p>
+        <p id="smenutxt">Arch</p>
+        <div class="smenuitem" id="smenuimg">
+          <a href="#" onclick="changer('images/tarchbridge.jpg')">
+            <img src="images/tarch.png" id="rsc" alt='Tied-Arch Bridge'/>
+          </a>
+        </div>
+        <p id="smenutxt">Tied-Arch</p>
+        <div class="smenuitem" id="smenuimg">
+          <a href="#" onclick="changer('images/suspbridge.jpg')">
+            <img src="images/susp.png" id="rsc" alt='Suspension Bridge'/>
+          </a>
+        </div>
+        <p id="smenutxt">Suspension</p>
+        <div class="smenuitem" id="smenuimg">
+          <a href="#" onclick="changer('images/cstayedbridge.jpg')">
+            <img src="images/cstayed.png" id="rsc" alt='Cable-Stayed Bridge'/>
+          </a>
+        </div>
+        <p id="smenutxt">Cable-Stayed</p>
+        <div class="smenuitem" id="smenuimg">
+          <a href="#" onclick="changer('images/cantileverbridge.jpg')">
+            <img src="images/cantilever.png" id="rsc" alt='Cantilever Bridge'/>
+          </a>
+        </div>
+        <p id="smenutxt">Cantilever</p>
+
+
         <div id="extraspace"></div>
       </div>
 
       <div class="pageimg">
-        <img id="pgh" src="images/pgh.png" alt='photo of pittsburgh taken by me'/>
+        <img id="pgh" src="images/beambridge.jfif" alt='photo of pittsburgh taken by me'/>
       </div>
 
 
       <div class="content" id=#embeded onload="closeNav()">
-        <h2>Home</h2>
+        <h2>Bridge</h2>
         <!--<p id="test"></p>-->
         <!--<embed id="embcontent" src="embedhtml/MSResume.pdf" type="application/pdf"></embed>-->
-        <embed id="embedcontent" src="embedhtml/homepage.html"/>
+        <embed id="embedcontent" src=""/>
 
       </div>
 
