@@ -17,16 +17,16 @@
 <tr>
   <td>trussbridge</td>
   <td>RRTrussBridgeSideView</td>
-  <td>JoKalliauer</td>
+  <td>Nk</td>
   <td><a href='https://en.wikipedia.org/wiki/Public_domain'>Public Domain</a></td>
-  <td><a href='https://commons.wikimedia.org/wiki/File:Track-bridge-overpass-transport-arch-viaduct-75233-pxhere.jpg'>Link</a></td>
+  <td><a href='https://commons.wikimedia.org/wiki/File:RRTrussBridgeSideView.jpg'>Link</a></td>
 </tr>
 <tr>
   <td>archbridge</td>
   <td>Track-bridge-overpass-transport-arch-viaduct-75233-pxhere</td>
-  <td>Douglas W. Jones</td>
+  <td>JoKalliauer</td>
   <td><a href='https://en.wikipedia.org/wiki/Public_domain'>Public Domain</a></td>
-  <td><a href='https://unsplash.com/photos/zNNPSqKRR2c'>Link</a></td>
+  <td><a href='https://commons.wikimedia.org/wiki/File:Track-bridge-overpass-transport-arch-viaduct-75233-pxhere.jpg'>Link</a></td>
 </tr>
 <tr>
   <td>tarchbridge</td>

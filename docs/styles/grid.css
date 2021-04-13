@@ -291,7 +291,7 @@
       width: 100%;
       display: grid;
       grid-template-columns: 1fr 150px 2fr 2fr 150px 1fr;
-      grid-template-rows: 220px max-content auto ;
+      grid-template-rows: 220px max-content auto auto ;
       grid-gap: 10px;
       z-index: 0;
     }

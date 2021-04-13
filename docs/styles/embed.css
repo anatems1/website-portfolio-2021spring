@@ -8,10 +8,12 @@
 
 table, th, td {
   border: 1px solid black;
+  word-wrap: break-word;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   text-align: center;
+  word-wrap: break-word;
 }
